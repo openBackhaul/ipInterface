@@ -8,6 +8,7 @@ Technology specific interface definition for IPv4 interfaces according to IETF R
 ### UML
 - Tobias Kratzl (Tobias.Kratzl@openBackhaul.com)
 - 0.1.0-tsp.190208.1706 : [190208 IpPac.zip](./190208%20IpPac.zip)
+- 0.1.0-tsp.190212 1025 : [190215 IpPac.zip](./190215%20IpPac.zip)
 
 ### Overview 
 - Tobias Kratzl (Tobias.Kratzl@openBackhaul.com)
