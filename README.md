@@ -27,6 +27,7 @@ Technology specific interface definition for IPv4 interfaces according to IETF R
 ### GenDoc Export
 - Tobias Kratzl (Tobias.Kratzl@openBackhaul.com)
 - 0.1.0-tsp.190208.1706+gendoc.1 : [ipPac_0.1.0-tsp.d.t+gendoc.190208.1654.docx](./ipPac_0.1.0-tsp.d.t+gendoc.190208.1654.docx)
+- 0.1.1-tsp.190220.1050+gendoc.1 : [ipPac_0.1.1-tsp.d.t+gendoc.190220.1046.docx](./ipPac_0.1.1-tsp.d.t+gendoc.190220.1046.docx)
 
 ### YANG File
 - Kranti Appari (Kranti.Appari@openBackhaul.com)
