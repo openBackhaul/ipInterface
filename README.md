@@ -20,7 +20,7 @@ Technology specific interface definition for IPv4 interfaces according to IETF R
 - 0.1.1-tsp.190215.1506+overview.1b : [190215 QosPacCD.PNG](./190215%20QosPacCD.PNG)
 - 0.1.1-tsp.190220.1050+overview.1a : [190220 IpPacCD.PNG](./190220%20IpPacCD.PNG)
 - 0.1.1-tsp.190220.1050+overview.1b : [190220 QosPacCD.PNG](./190220%20QosPacCD.PNG)
-- 0.1.1-tsp.190221.1500+overview.1b : [190221 QosPacCD.PNG](./190221%20QosPacCD.PNG) + [190221 IpPacCD.PNG](./190221%20IpPacCD.PNG)
+- 0.1.1-tsp.190221.1500+overview.1 : [190221 IpPacCD.PNG](./190221%20IpPacCD.PNG) + [190221 QosPacCD.PNG](./190221%20QosPacCD.PNG)
 
 ### List of Classes
 - Tobias Kratzl (Tobias.Kratzl@openBackhaul.com)
