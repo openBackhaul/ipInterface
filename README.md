@@ -13,6 +13,7 @@ Technology specific interface definition for IPv4 interfaces according to IETF R
 - 0.1.1-tsp.190220.1050 : [190220 IpPac + QosPac.zip](./190220%20IpPac%20+%20QosPac.zip)
 - 0.1.1-tsp.190221.1500 : [190221 IpPac + QosPac.zip](./190221%20IpPac%20+%20QosPac.zip)
 - 0.1.1-tsp.190222.1828 : [190222 IpPac + QosPac.zip](./190222%20IpPac%20+%20QosPac.zip)
+- 0.1.1-tsp.190227.1757 : [190227 IpPac + QosPac + ShapingPac + VpnPac + QueueingArtifact.zip](./190227%20IpPac%20+%20QosPac%20+%20ShapingPac%20+%20VpnPac%20+%20QueueingArtifact.zip)
 
 ### Overview 
 - Tobias Kratzl (Tobias.Kratzl@openBackhaul.com)
