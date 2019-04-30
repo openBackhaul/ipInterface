@@ -13,7 +13,6 @@ Technology specific interface definition for IPv4 interfaces according to IETF R
 - Tobias Kratzl (Tobias.Kratzl@openBackhaul.com)
 - [IpInterface_1.0.0-tsp.190430.1735+overview.1](./IpInterface_1.0.0-tsp.190430.1735+overview.1.png)
 
-
 ### List of Classes
 - to be provided 
 
@@ -38,6 +37,7 @@ Technology specific interface definition for IPv4 interfaces according to IETF R
 
 ### Open Issue List
 - Tobias Kratzl (Tobias.Kratzl@openBackhaul.com)
-- Issues
+- [ipInterface/issues](../../issues)
 
 ### Comments
+./.
