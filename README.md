@@ -3,7 +3,7 @@ Technology specific interface definition for IPv4 interfaces according to IETF R
 
 ### Branch
 - Tobias Kratzl (Tobias.Kratzl@openBackhaul.com)
-- 0.1.0-tsp.d.t : Use case driven model for the Transport SDN Pilot at Telefonica Germany
+- 1.0.0-tsp.d.t : Use case driven model for the Transport SDN Pilot at Telefonica Germany
 
 ### UML
 - Tobias Kratzl (Tobias.Kratzl@openBackhaul.com)
