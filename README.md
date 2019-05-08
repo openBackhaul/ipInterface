@@ -15,7 +15,7 @@ Technology specific interface definition for IPv4 interfaces according to IETF R
 
 ### List of Classes
 - Waseem Sattar (Waseem.Sattar@openBackhaul.com)
-- to be provided 
+- [IpInterface_1.0.0-tsp.190430.1735+classlist.1](./IpInterface_1.0.0-tsp.190430.1735+classlist.1.txt) 
 
 ### GenDoc Export
 - Tobias Kratzl (Tobias.Kratzl@openBackhaul.com)
