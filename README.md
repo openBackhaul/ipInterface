@@ -7,19 +7,19 @@ Technology specific interface definition for IPv4 interfaces according to IETF R
 
 ### UML
 - Tobias Kratzl (Tobias.Kratzl@openBackhaul.com)
-- [IpInterface_1.0.0-tsp.190430.1735](./IpInterface_1.0.0-tsp.190430.1735.zip)
+- [IpInterface_1.0.0-tsp.190709.1410](./IpInterface_1.0.0-tsp.190709.1410.zip)
 
 ### Overview 
 - Tobias Kratzl (Tobias.Kratzl@openBackhaul.com)
-- [IpInterface_1.0.0-tsp.190430.1735+overview.1](./IpInterface_1.0.0-tsp.190430.1735+overview.1.png)
+- [IpInterface_1.0.0-tsp.190709.1410+overview.1](./IpInterface_1.0.0-tsp.190709.1410+overview.1.png)
 
 ### List of Classes
 - Waseem Sattar (Waseem.Sattar@openBackhaul.com)
-- [IpInterface_1.0.0-tsp.190430.1735+classlist.1](./IpInterface_1.0.0-tsp.190430.1735+classlist.1.txt) 
+- to be provided 
 
 ### GenDoc Export
 - Tobias Kratzl (Tobias.Kratzl@openBackhaul.com)
-- [IpInterface_1.0.0-tsp.190430.1735+gendoc.1](./IpInterface_1.0.0-tsp.190430.1735+gendoc.1.docx)
+- [IpInterface_1.0.0-tsp.190709.1410+gendoc.1](./IpInterface_1.0.0-tsp.190709.1410+gendoc.1.docx)
 
 ### YANG File
 - to be provided 
