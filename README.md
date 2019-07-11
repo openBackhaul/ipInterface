@@ -25,7 +25,8 @@ Technology specific interface definition for IPv4 interfaces according to IETF R
 - When statement in Augmentation statement demands for LayerProtocol::layerProtocolName==LAYER_PROTOCOL_NAME_TYPE_IP_LAYER
 
 ### YANG File
-- to be provided 
+- Martin Skorupski (Martin.Skorupski@openBackhaul.com)
+- [IpInterface_1.0.0-tsp.190709.1410+yang.1](./IpInterface_1.0.0-tsp.190709.1410+yang.1.zip)
 
 ### Interface Simulator
 - not planned 
