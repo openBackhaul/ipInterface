@@ -26,7 +26,7 @@ Technology specific interface definition for IPv4 interfaces according to IETF R
 
 ### YANG File
 - Martin Skorupski (Martin.Skorupski@openBackhaul.com)
-- [IpInterface_1.0.0-tsp.190709.1410+yang.1](./IpInterface_1.0.0-tsp.190709.1410+yang.1.zip)
+- [IpInterface_1.0.0-tsp.190709.1410+yang.2](./IpInterface_1.0.0-tsp.190709.1410+yang.2.zip)
 
 ### Interface Simulator
 - not planned 
