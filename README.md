@@ -1,48 +1,41 @@
 # ipInterface
-Technology specific interface definition for IPv4 interfaces according to IETF RFC 791
+- Technology specific interface definition for IPv4 interfaces according to IETF RFC 791
+- Tobias Kratzl (Tobias.Kratzl@openBackhaul.com)
 
 ### Branch
-- Tobias Kratzl (Tobias.Kratzl@openBackhaul.com)
 - 1.0.0-tsp.d.t : Use case driven model for the Transport SDN Pilot at Telefonica Germany
 
 ### UML
-- Tobias Kratzl (Tobias.Kratzl@openBackhaul.com)
-- [IpInterface_1.0.0-tsp.190709.1410](./IpInterface_1.0.0-tsp.190709.1410.zip)
+- [IpInterface_1.0.0-tsp.200124.1305](./IpInterface_1.0.0-tsp.200124.1305.zip)
 
 ### Overview 
-- Tobias Kratzl (Tobias.Kratzl@openBackhaul.com)
-- [IpInterface_1.0.0-tsp.190709.1410+overview.1](./IpInterface_1.0.0-tsp.190709.1410+overview.1.png)
-
-### List of Classes
-- Waseem Sattar (Waseem.Sattar@openBackhaul.com)
-- to be provided 
+- [IpInterface_1.0.0-tsp.200124.1305+overview.1](./IpInterface_1.0.0-tsp.200124.1305+overview.1.png)
 
 ### GenDoc Export
-- Tobias Kratzl (Tobias.Kratzl@openBackhaul.com)
-- [IpInterface_1.0.0-tsp.190709.1410+gendoc.1](./IpInterface_1.0.0-tsp.190709.1410+gendoc.1.docx)
+- [IpInterface_1.0.0-tsp.200124.1305+gendoc.1](./IpInterface_1.0.0-tsp.200124.1305+gendoc.1.docx)
 
 ### Augmentation Condition
 - When statement in Augmentation statement demands for LayerProtocol::layerProtocolName==LAYER_PROTOCOL_NAME_TYPE_IP_LAYER
 
 ### YANG File
-- Martin Skorupski (Martin.Skorupski@openBackhaul.com)
-- [IpInterface_1.0.0-tsp.190709.1410+yang.3](./IpInterface_1.0.0-tsp.190709.1410+yang.3.zip)
-- [Issue#7](../../issues/7) in divergence to +yang.2 fixed.
+- [IpInterface_1.0.0-tsp.200124.1305+yang.2](./IpInterface_1.0.0-tsp.200124.1305+yang.2.zip)
+
+### JSON Schema
+- to be provided
 
 ### Interface Simulator
-- not planned 
+- to be provided
 
 ### Interface Validator
-- not planned
+- to be provided
 
 ### Publication
-- not planned
+- Candidate for ONF TR-532 v2.0 
 
 ### Model Classification
-- Trial
+- Live Network
 
 ### Open Issue List
-- Tobias Kratzl (Tobias.Kratzl@openBackhaul.com)
 - [ipInterface/issues](../../issues)
 
 ### Comments
