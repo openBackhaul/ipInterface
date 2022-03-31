@@ -22,6 +22,7 @@
 
 ### YANG File
 - [IpInterface_1.0.0-tsp.200124.1305+yang.3](./IpInterface_1.0.0-tsp.200124.1305+yang.3.zip) (deprecated)
+- [IpInterface_1.0.0-tsp.220330.1845+yang.1](./IpInterface_1.0.0-tsp.220330.1845+yang.1.zip)
 
 ### JSON Schema
 - to be provided
