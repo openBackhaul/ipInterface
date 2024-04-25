@@ -26,7 +26,7 @@
 - to be provided
 
 ### Interface Validator
-- to be provided
+- [IpInterface_1.0.0-tsi.240105.1005+validator.1](./IpInterface_1.0.0-tsi.240105.1005+validator.1.zip)
 
 ### Publication
 - Candidate for ONF TR-532 v2.0 
