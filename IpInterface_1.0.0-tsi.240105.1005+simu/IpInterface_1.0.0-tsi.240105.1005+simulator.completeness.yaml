@@ -1,0 +1,1255 @@
+openapi: 3.0.1
+info:
+  title: IpInterface_1.0.0-tsi.240105.1005+simulator.completeness
+  version: 1.0.0
+
+paths:
+########################################################################################################################
+#   IpInterface_1.0.0-tsi.240105.1005+simulator.completeness in static reference mode
+########################################################################################################################
+#
+# At Application
+# ==============
+#
+# Preparation => MountName=305250001, UUID=ipInt1, LocalID=1
+  /core-model-1-4:network-control-domain=cache/control-construct=305250001:
+    parameters:
+      - $ref: '#/components/parameters/user'
+      - $ref: '#/components/parameters/originator'
+      - $ref: '#/components/parameters/x-correlator'
+      - $ref: '#/components/parameters/trace-indicator'
+      - $ref: '#/components/parameters/customer-journey'
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getLtpList
+      summary: 'Provides list of LTPs from cache'
+      tags:
+        - IndividualServices
+      security:
+        - apiKeyAuth: []
+      responses:
+        '200':
+          description: 'List of LTPs provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - core-model-1-4:control-construct
+                properties:
+                  core-model-1-4:control-construct:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - logical-termination-point
+                      properties:
+                        logical-termination-point:
+                          type: array
+                          items:
+                            type: object
+                            required:
+                              - uuid
+                              - layer-protocol
+                            properties:
+                              uuid:
+                                type: string
+                                enum:
+                                  - 'ipInt1'
+                              layer-protocol:
+                                type: array
+                                items:
+                                  type: object
+                                  required:
+                                    - local-id
+                                    - layer-protocol-name
+                                  properties:
+                                    local-id:
+                                      type: string
+                                      enum:
+                                        - '1'
+                                    layer-protocol-name:
+                                      type: string
+                                      enum:
+                                        - 'ip-interface-1-0:LAYER_PROTOCOL_NAME_TYPE_IP_LAYER'
+                example:
+                  core-model-1-4:control-construct:
+                    - logical-termination-point:
+                        - uuid: 'ipInt1'
+                          layer-protocol:
+                            - local-id: '1'
+                              layer-protocol-name: 'ip-interface-1-0:LAYER_PROTOCOL_NAME_TYPE_IP_LAYER'
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+            exec-time:
+              $ref: '#/components/headers/exec-time'
+            backend-time:
+              $ref: '#/components/headers/backend-time'
+            life-cycle-state:
+              $ref: '#/components/headers/life-cycle-state'
+  
+# Completeness of GET 200
+  /core-model-1-4:network-control-domain=cache/control-construct=305250001/logical-termination-point=ipInt1/layer-protocol=1/ip-interface-1-0:ip-interface-pac/ip-interface-capability:
+    parameters:
+      - $ref: '#/components/parameters/user'
+      - $ref: '#/components/parameters/originator'
+      - $ref: '#/components/parameters/x-correlator'
+      - $ref: '#/components/parameters/trace-indicator'
+      - $ref: '#/components/parameters/customer-journey'
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getCachedIpInterfaceCapability
+      summary: 'Provides IpInterfaceCapability from cache'
+      tags:
+        - IndividualServices
+      security:
+        - apiKeyAuth: []
+      responses:
+        '200':
+          description: 'IpInterfaceCapability provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - ip-interface-1-0:ip-interface-capability
+                properties:
+                  ip-interface-1-0:ip-interface-capability:
+                    $ref: '#/components/schemas/ip-interface-capability'
+                example:
+                  ip-interface-1-0:ip-interface-capability:
+                    maximum-number-of-ip-v-4-addresses: 1
+                    dhcp-client-is-avail: false
+                    fixed-default-gateway-configuration-is-avail: true
+                    maximum-transmission-unit-min: 46
+                    maximum-transmission-unit-max: 9600
+                    ip-v-6-is-avail: false
+                    arp-proxy-is-avail: true
+                    ingress-policing-is-avail: true
+                    egress-shaping-is-avail: true
+                    information-rate-min: 1000000
+                    information-rate-max: 1000
+                    burst-size-min: 256
+                    burst-size-max: 10000
+                    vpn-binding-is-avail: true
+                    admin-shut-down-is-avail: true
+                    supported-loop-back-kind-list:
+                      - 'ip-interface-1-0:LOOP_BACK_TYPE_NONE'
+                    maintenance-timer-range: 'Range of the maintenance timer not yet defined.'
+                    statistics-is-avail: true
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+            exec-time:
+              $ref: '#/components/headers/exec-time'
+            backend-time:
+              $ref: '#/components/headers/backend-time'
+            life-cycle-state:
+              $ref: '#/components/headers/life-cycle-state'
+        '4XX':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        '500':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        default:
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+  /core-model-1-4:network-control-domain=cache/control-construct=305250001/logical-termination-point=ipInt1/layer-protocol=1/ip-interface-1-0:ip-interface-pac/ip-interface-configuration:
+    parameters:
+      - $ref: '#/components/parameters/user'
+      - $ref: '#/components/parameters/originator'
+      - $ref: '#/components/parameters/x-correlator'
+      - $ref: '#/components/parameters/trace-indicator'
+      - $ref: '#/components/parameters/customer-journey'
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getCachedIpInterfaceConfiguration
+      summary: 'Provides IpInterfaceConfiguration from cache'
+      tags:
+        - IndividualServices
+      security:
+        - apiKeyAuth: []
+      responses:
+        '200':
+          description: 'IpInterfaceConfiguration provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - ip-interface-1-0:ip-interface-configuration
+                properties:
+                  ip-interface-1-0:ip-interface-configuration:
+                    $ref: '#/components/schemas/ip-interface-configuration'
+                example:
+                  ip-interface-1-0:ip-interface-configuration:
+                    interface-name: 'Interface name not yet defined.'
+                    interface-is-on: true
+                    dhcp-client-is-on: false
+                    fixed-ip-v-4-address-list:
+                      - fixed-ip-v-4-address: '110.251.7.246'
+                        fixed-ip-v-4-address-prefix-length: -1
+                        fixed-default-gateway-ip-v-4-address: '110.251.7.1'
+                    maximum-transmission-unit-ip: 1500
+                    arp-proxy: 'ip-interface-1-0:ARP_PROXY_TYPE_DISABLE'
+                    ingress-policing-profile: ''
+                    egress-shaping-is-on: true
+                    maximum-information-rate: 256000
+                    maximum-burst-size: 1000
+                    l-3vpn-profile: ''
+                    qos-profile: ''
+                    loop-back-kind-on: 'ip-interface-1-0:LOOP_BACK_TYPE_NONE'
+                    maintenance-timer: -1
+                    statistics-is-on: true
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+            exec-time:
+              $ref: '#/components/headers/exec-time'
+            backend-time:
+              $ref: '#/components/headers/backend-time'
+            life-cycle-state:
+              $ref: '#/components/headers/life-cycle-state'
+        '4XX':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        '500':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        default:
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+  /core-model-1-4:network-control-domain=cache/control-construct=305250001/logical-termination-point=ipInt1/layer-protocol=1/ip-interface-1-0:ip-interface-pac/ip-interface-status:
+    parameters:
+      - $ref: '#/components/parameters/user'
+      - $ref: '#/components/parameters/originator'
+      - $ref: '#/components/parameters/x-correlator'
+      - $ref: '#/components/parameters/trace-indicator'
+      - $ref: '#/components/parameters/customer-journey'
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getCachedIpInterfaceStatus
+      summary: 'Provides IpInterfaceStatus from cache'
+      tags:
+        - IndividualServices
+      security:
+        - apiKeyAuth: []
+      responses:
+        '200':
+          description: 'IpInterfaceStatus provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - ip-interface-1-0:ip-interface-status
+                properties:
+                  ip-interface-1-0:ip-interface-status:
+                    $ref: '#/components/schemas/ip-interface-status'
+                example:
+                  ip-interface-1-0:ip-interface-status:
+                    interface-status: 'ip-interface-1-0:INTERFACE_STATUS_TYPE_UP'
+                    ip-v-4-address-cur-list:
+                      - fixed-ip-v-4-address: '110.251.7.246'
+                        fixed-ip-v-4-address-prefix-length: -1
+                        fixed-default-gateway-ip-v-4-address: '110.251.7.1'
+                    ip-address-origin: 'ip-interface-1-0:IP_ADDRESS_ORIGIN_TYPE_STATIC'
+                    neighbor-list:
+                      - neighbor-mac-address: 'A2:40:4b:b9:Bd:34'
+                        neighbor-ip-v-4-address-list: '254.227.7.221'
+                        neighbor-origin: 'ip-interface-1-0:IP_ADDRESS_ORIGIN_TYPE_STATIC'
+                    vpn-binding-is-up: true
+                    loop-back-kind-up: 'ip-interface-1-0:LOOP_BACK_TYPE_NONE'
+                    statistics-is-up: true
+                    timestamp: '2010-11-20T14:00:00+01:00'
+                    last-10-sec-data-input-rate: -1
+                    last-10-sec-data-output-rate: -1
+                    last-10-sec-packet-input-rate: -1
+                    last-10-sec-packet-output-rate: -1
+                    data-volume-input: 0
+                    data-volume-output: 0
+                    total-packets-input: '-1'
+                    total-packets-output: '-1'
+                    forwarded-data-volume-input: -1
+                    forwarded-data-volume-output: -1
+                    forwarded-packets-input: '-1'
+                    forwarded-packets-output: '-1'
+                    unicast-packets-input: '0'
+                    unicast-packets-output: '0'
+                    multicast-packets-input: -1
+                    multicast-packets-output: -1
+                    broadcast-packets-input: -1
+                    broadcast-packets-output: -1
+                    fragmented-packets-input: -1
+                    errored-packets-input: 0
+                    errored-packets-output: 0
+                    dropped-packets-input: 0
+                    dropped-packets-output: 0
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+            exec-time:
+              $ref: '#/components/headers/exec-time'
+            backend-time:
+              $ref: '#/components/headers/backend-time'
+            life-cycle-state:
+              $ref: '#/components/headers/life-cycle-state'
+        '4XX':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        '500':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        default:
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+
+
+#
+# At Controller (copy from above, different paths, less parameters, basicAuth, no headers)
+# =============
+#
+# Preparation => MountName=305250001, UUID=ipInt1, LocalID=1
+  /rests/data/network-topology:network-topology/topology=topology-netconf/node=305250001/yang-ext:mount/core-model-1-4:control-construct:
+    parameters:
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getLtpList
+      summary: 'Provides list of LTPs from device'
+      tags:
+        - IndividualServices
+      security:
+        - basicAuth: []
+      responses:
+        '200':
+          description: 'List of LTPs provided from device'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - core-model-1-4:control-construct
+                properties:
+                  core-model-1-4:control-construct:
+                    type: array
+                    items:
+                      type: object
+                      required:
+                        - logical-termination-point
+                      properties:
+                        logical-termination-point:
+                          type: array
+                          items:
+                            type: object
+                            required:
+                              - uuid
+                              - layer-protocol
+                            properties:
+                              uuid:
+                                type: string
+                                enum:
+                                  - 'ipInt1'
+                              layer-protocol:
+                                type: array
+                                items:
+                                  type: object
+                                  required:
+                                    - local-id
+                                    - layer-protocol-name
+                                  properties:
+                                    local-id:
+                                      type: string
+                                      enum:
+                                        - '1'
+                                    layer-protocol-name:
+                                      type: string
+                                      enum:
+                                        - 'ip-interface-1-0:LAYER_PROTOCOL_NAME_TYPE_IP_LAYER'
+                example:
+                  core-model-1-4:control-construct:
+                    - logical-termination-point:
+                        - uuid: 'ipInt1'
+                          layer-protocol:
+                            - local-id: '1'
+                              layer-protocol-name: 'ip-interface-1-0:LAYER_PROTOCOL_NAME_TYPE_IP_LAYER'
+
+# Completeness of GET 200
+  /rests/data/network-topology:network-topology/topology=topology-netconf/node=305250001/yang-ext:mount/core-model-1-4:control-construct/logical-termination-point=ipInt1/layer-protocol=1/ip-interface-1-0:ip-interface-pac/ip-interface-capability:
+    parameters:
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getIpInterfaceCapability
+      summary: 'Provides IpInterfaceCapability from device'
+      tags:
+        - IndividualServices
+      security:
+        - basicAuth: []
+      responses:
+        '200':
+          description: 'IpInterfaceCapability provided from device'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - ip-interface-1-0:ip-interface-capability
+                properties:
+                  ip-interface-1-0:ip-interface-capability:
+                    $ref: '#/components/schemas/ip-interface-capability'
+                example:
+                  ip-interface-1-0:ip-interface-capability:
+                    maximum-number-of-ip-v-4-addresses: 1
+                    dhcp-client-is-avail: false
+                    fixed-default-gateway-configuration-is-avail: true
+                    maximum-transmission-unit-min: 46
+                    maximum-transmission-unit-max: 9600
+                    ip-v-6-is-avail: false
+                    arp-proxy-is-avail: true
+                    ingress-policing-is-avail: true
+                    egress-shaping-is-avail: true
+                    information-rate-min: 1000000
+                    information-rate-max: 1000
+                    burst-size-min: 256
+                    burst-size-max: 10000
+                    vpn-binding-is-avail: true
+                    admin-shut-down-is-avail: true
+                    supported-loop-back-kind-list:
+                      - 'ip-interface-1-0:LOOP_BACK_TYPE_NONE'
+                    maintenance-timer-range: 'Range of the maintenance timer not yet defined.'
+                    statistics-is-avail: true
+  /rests/data/network-topology:network-topology/topology=topology-netconf/node=305250001/yang-ext:mount/core-model-1-4:control-construct/logical-termination-point=ipInt1/layer-protocol=1/ip-interface-1-0:ip-interface-pac/ip-interface-configuration:
+    parameters:
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getIpInterfaceConfiguration
+      summary: 'Provides IpInterfaceConfiguration from device'
+      tags:
+        - IndividualServices
+      security:
+        - basicAuth: []
+      responses:
+        '200':
+          description: 'IpInterfaceConfiguration provided from device'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - ip-interface-1-0:ip-interface-configuration
+                properties:
+                  ip-interface-1-0:ip-interface-configuration:
+                    $ref: '#/components/schemas/ip-interface-configuration'
+                example:
+                  ip-interface-1-0:ip-interface-configuration:
+                    interface-name: 'Interface name not yet defined.'
+                    interface-is-on: true
+                    dhcp-client-is-on: false
+                    fixed-ip-v-4-address-list:
+                      - fixed-ip-v-4-address: '110.251.7.246'
+                        fixed-ip-v-4-address-prefix-length: -1
+                        fixed-default-gateway-ip-v-4-address: '110.251.7.1'
+                    maximum-transmission-unit-ip: 1500
+                    arp-proxy: 'ip-interface-1-0:ARP_PROXY_TYPE_DISABLE'
+                    ingress-policing-profile: ''
+                    egress-shaping-is-on: true
+                    maximum-information-rate: 256000
+                    maximum-burst-size: 1000
+                    l-3vpn-profile: ''
+                    qos-profile: ''
+                    loop-back-kind-on: 'ip-interface-1-0:LOOP_BACK_TYPE_NONE'
+                    maintenance-timer: -1
+                    statistics-is-on: true
+  /rests/data/network-topology:network-topology/topology=topology-netconf/node=305250001/yang-ext:mount/core-model-1-4:control-construct/logical-termination-point=ipInt1/layer-protocol=1/ip-interface-1-0:ip-interface-pac/ip-interface-status:
+    parameters:
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getCachedIpInterfaceStatus
+      summary: 'Provides IpInterfaceStatus from device'
+      tags:
+        - IndividualServices
+      security:
+        - basicAuth: []
+      responses:
+        '200':
+          description: 'IpInterfaceStatus provided from device'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - ip-interface-1-0:ip-interface-status
+                properties:
+                  ip-interface-1-0:ip-interface-status:
+                    $ref: '#/components/schemas/ip-interface-status'
+                example:
+                  ip-interface-1-0:ip-interface-status:
+                    interface-status: 'ip-interface-1-0:INTERFACE_STATUS_TYPE_UP'
+                    ip-v-4-address-cur-list:
+                      - fixed-ip-v-4-address: '110.251.7.246'
+                        fixed-ip-v-4-address-prefix-length: -1
+                        fixed-default-gateway-ip-v-4-address: '110.251.7.1'
+                    ip-address-origin: 'ip-interface-1-0:IP_ADDRESS_ORIGIN_TYPE_STATIC'
+                    neighbor-list:
+                      - neighbor-mac-address: 'A2:40:4b:b9:Bd:34'
+                        neighbor-ip-v-4-address-list: '254.227.7.221'
+                        neighbor-origin: 'ip-interface-1-0:IP_ADDRESS_ORIGIN_TYPE_STATIC'
+                    vpn-binding-is-up: true
+                    loop-back-kind-up: 'ip-interface-1-0:LOOP_BACK_TYPE_NONE'
+                    statistics-is-up: true
+                    timestamp: '2010-11-20T14:00:00+01:00'
+                    last-10-sec-data-input-rate: -1
+                    last-10-sec-data-output-rate: -1
+                    last-10-sec-packet-input-rate: -1
+                    last-10-sec-packet-output-rate: -1
+                    data-volume-input: 0
+                    data-volume-output: 0
+                    total-packets-input: '-1'
+                    total-packets-output: '-1'
+                    forwarded-data-volume-input: -1
+                    forwarded-data-volume-output: -1
+                    forwarded-packets-input: '-1'
+                    forwarded-packets-output: '-1'
+                    unicast-packets-input: '0'
+                    unicast-packets-output: '0'
+                    multicast-packets-input: -1
+                    multicast-packets-output: -1
+                    broadcast-packets-input: -1
+                    broadcast-packets-output: -1
+                    fragmented-packets-input: -1
+                    errored-packets-input: 0
+                    errored-packets-output: 0
+                    dropped-packets-input: 0
+                    dropped-packets-output: 0
+
+
+########################################################################################################################
+#   Generic Paths
+########################################################################################################################
+  /generic/core-model-1-4:network-control-domain=cache/control-construct={mountName}/logical-termination-point={uuid}/layer-protocol={localId}/ip-interface-1-0:ip-interface-pac/ip-interface-capability:
+    parameters:
+      - $ref: '#/components/parameters/user'
+      - $ref: '#/components/parameters/originator'
+      - $ref: '#/components/parameters/x-correlator'
+      - $ref: '#/components/parameters/trace-indicator'
+      - $ref: '#/components/parameters/customer-journey'
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getCachedIpInterfaceCapability
+      summary: 'Provides IpInterfaceCapability from cache'
+      tags:
+        - IndividualServices
+      security:
+        - apiKeyAuth: []
+      responses:
+        '200':
+          description: 'IpInterfaceCapability provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - ip-interface-1-0:ip-interface-capability
+                properties:
+                  ip-interface-1-0:ip-interface-capability:
+                    $ref: '#/components/schemas/ip-interface-capability'
+                example:
+                  ip-interface-1-0:ip-interface-capability:
+                    maximum-number-of-ip-v-4-addresses: 0
+                    dhcp-client-is-avail: true
+                    fixed-default-gateway-configuration-is-avail: true
+                    maximum-transmission-unit-min: 0
+                    maximum-transmission-unit-max: 0
+                    ip-v-6-is-avail: true
+                    arp-proxy-is-avail: true
+                    ingress-policing-is-avail: true
+                    egress-shaping-is-avail: true
+                    information-rate-min: 0
+                    information-rate-max: 0
+                    burst-size-min: 0
+                    burst-size-max: 0
+                    vpn-binding-is-avail: true
+                    admin-shut-down-is-avail: true
+                    supported-loop-back-kind-list:
+                      - 'ip-interface-1-0:LOOP_BACK_TYPE_NONE'
+                    maintenance-timer-range: 'Range of the maintenance timer not yet defined.'
+                    statistics-is-avail: true
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+            exec-time:
+              $ref: '#/components/headers/exec-time'
+            backend-time:
+              $ref: '#/components/headers/backend-time'
+            life-cycle-state:
+              $ref: '#/components/headers/life-cycle-state'
+        '4XX':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        '500':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        default:
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+  /generic/core-model-1-4:network-control-domain=cache/control-construct={mountName}/logical-termination-point={uuid}/layer-protocol={localId}/ip-interface-1-0:ip-interface-pac/ip-interface-configuration:
+    parameters:
+      - $ref: '#/components/parameters/user'
+      - $ref: '#/components/parameters/originator'
+      - $ref: '#/components/parameters/x-correlator'
+      - $ref: '#/components/parameters/trace-indicator'
+      - $ref: '#/components/parameters/customer-journey'
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getCachedIpInterfaceConfiguration
+      summary: 'Provides IpInterfaceConfiguration from cache'
+      tags:
+        - IndividualServices
+      security:
+        - apiKeyAuth: []
+      responses:
+        '200':
+          description: 'IpInterfaceConfiguration provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - ip-interface-1-0:ip-interface-configuration
+                properties:
+                  ip-interface-1-0:ip-interface-configuration:
+                    $ref: '#/components/schemas/ip-interface-configuration'
+                example:
+                  ip-interface-1-0:ip-interface-configuration:
+                    interface-name: 'string'
+                    interface-is-on: true
+                    dhcp-client-is-on: true
+                    fixed-ip-v-4-address-list:
+                      - fixed-ip-v-4-address: '110.251.7.246'
+                        fixed-ip-v-4-address-prefix-length: 0
+                        fixed-default-gateway-ip-v-4-address: '213.9.228.1'
+                    maximum-transmission-unit-ip: 0
+                    arp-proxy: 'ip-interface-1-0:ARP_PROXY_TYPE_DISABLE'
+                    ingress-policing-profile: 'string'
+                    egress-shaping-is-on: true
+                    maximum-information-rate: 0
+                    maximum-burst-size: 0
+                    l-3vpn-profile: 'string'
+                    qos-profile: 'string'
+                    loop-back-kind-on: 'ip-interface-1-0:LOOP_BACK_TYPE_NONE'
+                    maintenance-timer: 0
+                    statistics-is-on: true                  
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+            exec-time:
+              $ref: '#/components/headers/exec-time'
+            backend-time:
+              $ref: '#/components/headers/backend-time'
+            life-cycle-state:
+              $ref: '#/components/headers/life-cycle-state'
+        '4XX':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        '500':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        default:
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+  /generic/core-model-1-4:network-control-domain=cache/control-construct={mountName}/logical-termination-point={uuid}/layer-protocol={localId}/ip-interface-1-0:ip-interface-pac/ip-interface-status:
+    parameters:
+      - $ref: '#/components/parameters/user'
+      - $ref: '#/components/parameters/originator'
+      - $ref: '#/components/parameters/x-correlator'
+      - $ref: '#/components/parameters/trace-indicator'
+      - $ref: '#/components/parameters/customer-journey'
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/uuid'
+      - $ref: '#/components/parameters/localId'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getCachedIpInterfaceStatus
+      summary: 'Provides IpInterfaceStatus from cache'
+      tags:
+        - IndividualServices
+      security:
+        - apiKeyAuth: []
+      responses:
+        '200':
+          description: 'IpInterfaceStatus provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - ip-interface-1-0:ip-interface-status
+                properties:
+                  ip-interface-1-0:ip-interface-status:
+                    $ref: '#/components/schemas/ip-interface-status'
+                example:
+                  ip-interface-1-0:ip-interface-status:
+                    interface-status: 'ip-interface-1-0:INTERFACE_STATUS_TYPE_UP'
+                    ip-v-4-address-cur-list:
+                      - fixed-ip-v-4-address: '21.220.253.239'
+                        fixed-ip-v-4-address-prefix-length: 0
+                        fixed-default-gateway-ip-v-4-address: '202.80.29.05'
+                    ip-address-origin: 'ip-interface-1-0:IP_ADDRESS_ORIGIN_TYPE_OTHER'
+                    neighbor-list:
+                      - neighbor-mac-address: 'A2:40:4b:b9:Bd:34'
+                        neighbor-ip-v-4-address-list: '254.227.7.221'
+                        neighbor-origin: 'ip-interface-1-0:IP_ADDRESS_ORIGIN_TYPE_OTHER'
+                    vpn-binding-is-up: true
+                    loop-back-kind-up: 'ip-interface-1-0:LOOP_BACK_TYPE_NONE'
+                    statistics-is-up: true
+                    timestamp: '2010-11-20T14:00:00+01:00'
+                    last-10-sec-data-input-rate: 0
+                    last-10-sec-data-output-rate: 0
+                    last-10-sec-packet-input-rate: 0
+                    last-10-sec-packet-output-rate: 0
+                    data-volume-input: 0
+                    data-volume-output: 0
+                    total-packets-input: 'string'
+                    total-packets-output: 'string'
+                    forwarded-data-volume-input: 0
+                    forwarded-data-volume-output: 0
+                    forwarded-packets-input: 'string'
+                    forwarded-packets-output: 'string'
+                    unicast-packets-input: 'string'
+                    unicast-packets-output: 'string'
+                    multicast-packets-input: 0
+                    multicast-packets-output: 0
+                    broadcast-packets-input: 0
+                    broadcast-packets-output: 0
+                    fragmented-packets-input: 0
+                    errored-packets-input: 0
+                    errored-packets-output: 0
+                    dropped-packets-input: 0
+                    dropped-packets-output: 0
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+            exec-time:
+              $ref: '#/components/headers/exec-time'
+            backend-time:
+              $ref: '#/components/headers/backend-time'
+            life-cycle-state:
+              $ref: '#/components/headers/life-cycle-state'
+        '4XX':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        '500':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        default:
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+
+
+########################################################################################################################
+#   Common Components
+########################################################################################################################
+components:
+  parameters:
+    user:
+      name: user
+      in: header
+      required: true
+      schema:
+        type: string
+        example: 'User Name'
+      description: 'User identifier from the system starting the service call'
+    originator:
+      name: originator
+      in: header
+      required: true
+      schema:
+        type: string
+        minLength: 3
+        example: 'Resolver'
+      description: >
+        'Identification for the system consuming the API, as defined in
+         [/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/application-name]'
+    x-correlator:
+      name: x-correlator
+      in: header
+      required: true
+      schema:
+        type: string
+        pattern: '^[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}$'
+        description: 'Empty string accepted from external applications.'
+        example: '550e8400-e29b-11d4-a716-446655440000'
+      description: 'UUID for the service execution flow that allows to correlate requests and responses'
+    trace-indicator:
+      name: trace-indicator
+      in: header
+      required: true
+      schema:
+        type: string
+        pattern: '^([0-9]+)(\.([0-9]+))*$'
+        description: 'Empty string accepted from external applications.'
+        example: '1.3.1'
+      description: 'Sequence of request numbers along the flow'
+    customer-journey:
+      name: customer-journey
+      in: header
+      required: true
+      schema:
+        type: string
+        example: 'Unknown value'
+      description: 'Holds information supporting customer’s journey to which the execution applies'
+    mountName:
+      name: mountName
+      in: path
+      required: true
+      schema:
+        type: string
+        example: '222250001'
+      description: 'The mountName of the device that is addressed by the request'
+    uuid:
+      name: uuid
+      in: path
+      required: true
+      schema:
+        type: string
+        example: 'LTP-MWPS-TTP-1-1'
+      description: 'Instance identifier that is unique within the device'
+    uuid1:
+      name: uuid1
+      in: path
+      required: true
+      schema:
+        type: string
+        example: 'LTP-MWPS-TTP-1-1'
+      description: 'Another instance identifier that is unique within the device'
+    localId:
+      name: localId
+      in: path
+      required: true
+      schema:
+        type: string
+        example: 'LP-MWPS-TTP-1-1'
+      description: 'Instance identifier that is unique within its list'
+    fields:
+      name: fields
+      in: query
+      required: false
+      schema:
+        type: string
+        example: 'node(node-id;netconf-node-topology:connection-status)'
+      description: 'Query parameter to filter ressources according to RFC8040 fields filter spec'
+  responses:
+    responseForErroredServiceRequests:
+      description: 'Response in case of errored service requests'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/errorDescription'
+      headers:
+        x-correlator:
+          schema:
+            type: string
+            pattern: '^[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}$'
+            example: '550e8400-e29b-11d4-a716-446655440000'
+          description: 'UUID for the service execution flow that allows to correlate requests and responses. Its value must be identical at the response compared with its corresponding request'
+        exec-time:
+          schema:
+            type: integer
+            example: 1100
+          description: 'Value written by the service provider, reporting the total elapsed time for the execution, including all the additional processing needed to retrieve the data from the backend service. Expressed in milliseconds'
+        backend-time:
+          schema:
+            type: integer
+            example: 850
+          description: 'Value written by the service provider, reporting the elapsed time for data retrieval from the backend (service invocation, database access…). Expressed in milliseconds'
+    responseForErroredOamRequests:
+      description: 'Response in case of errored OaM requests'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/errorDescription'
+  headers:
+    x-correlator:
+      schema:
+        type: string
+        example: '550e8400-e29b-11d4-a716-446655440000'
+      description: 'UUID for the service execution flow that allows to correlate requests and responses. Its value must be identical at the response compared with its corresponding request'
+    exec-time:
+      schema:
+        type: integer
+        example: 1100
+      description: 'Value written by the service provider, reporting the total elapsed time for the execution, including all the additional processing needed to retrieve the data from the backend service. Expressed in milliseconds'
+    backend-time:
+      schema:
+        type: integer
+        example: 850
+      description: 'Value written by the service provider, reporting the elapsed time for data retrieval from the backend (service invocation, database access…). Expressed in milliseconds'
+    life-cycle-state:
+      schema:
+        type: string
+        enum:
+          - 'EXPERIMENTAL'
+          - 'OPERATIONAL'
+          - 'DEPRECATED'
+          - 'OBSOLETE'
+          - 'UNKNOWN'
+          - 'NOT_YET_DEFINED'
+        example: 'EXPERIMENTAL'
+  schemas:
+    errorDescription:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+
+    ip-interface-capability:
+      type: object
+      required:
+        - maximum-number-of-ip-v-4-addresses
+        - dhcp-client-is-avail
+        - fixed-default-gateway-configuration-is-avail
+        - maximum-transmission-unit-min
+        - maximum-transmission-unit-max
+        - ip-v-6-is-avail
+        - arp-proxy-is-avail
+        - ingress-policing-is-avail
+        - egress-shaping-is-avail
+        - information-rate-min
+        - information-rate-max
+        - burst-size-min
+        - burst-size-max
+        - vpn-binding-is-avail
+        - admin-shut-down-is-avail
+        - supported-loop-back-kind-list
+        - maintenance-timer-range
+        - statistics-is-avail
+      properties:
+        maximum-number-of-ip-v-4-addresses:
+          type: integer
+          format: int16
+        dhcp-client-is-avail:
+          type: boolean
+        fixed-default-gateway-configuration-is-avail:
+          type: boolean
+        maximum-transmission-unit-min:
+          type: integer
+          format: int16
+        maximum-transmission-unit-max:
+          type: integer
+          format: int16
+        ip-v-6-is-avail:
+          type: boolean
+        arp-proxy-is-avail:
+          type: boolean
+        ingress-policing-is-avail:
+          type: boolean
+        egress-shaping-is-avail:
+          type: boolean
+        information-rate-min:
+          type: integer
+          format: int32
+        information-rate-max:
+          type: integer
+          format: int32
+        burst-size-min:
+          type: integer
+          format: int16
+        burst-size-max:
+          type: integer
+          format: int16
+        vpn-binding-is-avail:
+          type: boolean
+        admin-shut-down-is-avail:
+          type: boolean
+        supported-loop-back-kind-list:
+          type: array
+          minItems: 1
+          maxItems: 3
+          items:
+            type: string
+            enum:
+              - 'ip-interface-1-0:LOOP_BACK_TYPE_NONE'
+              - 'ip-interface-1-0:LOOP_BACK_TYPE_BACK_TO_LOCAL'
+              - 'ip-interface-1-0:LOOP_BACK_TYPE_BACK_TO_REMOTE'
+              - 'ip-interface-1-0:LOOP_BACK_TYPE_NOT_YET_DEFINED'
+        maintenance-timer-range:
+          type: string
+          pattern: '^(Range of the maintenance timer not yet defined\.)$|^([0-9]{1,}){1,1}([,]{1,1}[ ]{1,1}[1-9]{1,1}[0-9]{0,}){0,}$|^([0-9]{1,}){1,1}(-){1,1}([1-9]{1,1}[0-9]{0,}){1,1}$'
+        statistics-is-avail:
+          type: boolean
+    ip-interface-configuration:
+      type: object
+      required:
+        - interface-name
+        - interface-is-on
+        - dhcp-client-is-on
+        - fixed-ip-v-4-address-list
+        - maximum-transmission-unit-ip
+        - arp-proxy
+        - egress-shaping-is-on
+        - maximum-information-rate
+        - maximum-burst-size
+        - loop-back-kind-on
+        - maintenance-timer
+        - statistics-is-on
+      properties:
+        interface-name:
+          type: string
+        interface-is-on:
+          type: boolean
+        dhcp-client-is-on:
+          type: boolean
+        fixed-ip-v-4-address-list:
+          type: array
+          minItems: 1
+          x-key: fixed-ip-v-4-address fixed-ip-v-4-address-prefix-length
+          items:
+            type: object
+            required:
+              - fixed-ip-v-4-address
+              - fixed-ip-v-4-address-prefix-length
+              - fixed-default-gateway-ip-v-4-address
+            properties:
+              fixed-ip-v-4-address:
+                type: string
+                pattern: '^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'
+              fixed-ip-v-4-address-prefix-length:
+                type: integer
+                format: int8
+              fixed-default-gateway-ip-v-4-address:
+                type: string
+                pattern: '^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'
+        maximum-transmission-unit-ip:
+          type: integer
+          format: int16
+        arp-proxy:
+          type: string
+          enum:
+            - 'ip-interface-1-0:ARP_PROXY_TYPE_DISABLE'
+            - 'ip-interface-1-0:ARP_PROXY_TYPE_REMOTE_ONLY'
+            - 'ip-interface-1-0:ARP_PROXY_TYPE_ALL'
+            - 'ip-interface-1-0:ARP_PROXY_TYPE_NOT_YET_DEFINED'
+        ingress-policing-profile:
+          type: string
+        egress-shaping-is-on:
+          type: boolean
+        maximum-information-rate:
+          type: integer
+          format: int32
+        maximum-burst-size:
+          type: integer
+          format: int16
+        l-3vpn-profile:
+          type: string
+        qos-profile:
+          type: string
+        loop-back-kind-on:
+          type: string
+          enum:
+            - 'ip-interface-1-0:LOOP_BACK_TYPE_NONE'
+            - 'ip-interface-1-0:LOOP_BACK_TYPE_BACK_TO_LOCAL'
+            - 'ip-interface-1-0:LOOP_BACK_TYPE_BACK_TO_REMOTE'
+            - 'ip-interface-1-0:LOOP_BACK_TYPE_NOT_YET_DEFINED'
+        maintenance-timer:
+          type: integer
+          format: int32
+        statistics-is-on:
+          type: boolean
+    ip-interface-status:
+      type: object
+      required:
+        - interface-status
+        - ip-v-4-address-cur-list
+        - ip-address-origin
+        - vpn-binding-is-up
+        - loop-back-kind-up
+        - statistics-is-up
+        - timestamp
+        - last-10-sec-data-input-rate
+        - last-10-sec-data-output-rate
+        - last-10-sec-packet-input-rate
+        - last-10-sec-packet-output-rate
+        - data-volume-input
+        - data-volume-output
+        - total-packets-input
+        - total-packets-output
+        - forwarded-data-volume-input
+        - forwarded-data-volume-output
+        - forwarded-packets-input
+        - forwarded-packets-output
+        - unicast-packets-input
+        - unicast-packets-output
+        - multicast-packets-input
+        - multicast-packets-output
+        - broadcast-packets-input
+        - broadcast-packets-output
+        - fragmented-packets-input
+        - errored-packets-input
+        - errored-packets-output
+        - dropped-packets-input
+        - dropped-packets-output
+      properties:
+        interface-status:
+          type: string
+          enum:
+            - 'ip-interface-1-0:INTERFACE_STATUS_TYPE_UP'
+            - 'ip-interface-1-0:INTERFACE_STATUS_TYPE_DOWN'
+            - 'ip-interface-1-0:INTERFACE_STATUS_TYPE_TESTING'
+            - 'ip-interface-1-0:INTERFACE_STATUS_TYPE_UNKNOWN'
+            - 'ip-interface-1-0:INTERFACE_STATUS_TYPE_DORMANT'
+            - 'ip-interface-1-0:INTERFACE_STATUS_TYPE_NOT_PRESENT'
+            - 'ip-interface-1-0:INTERFACE_STATUS_TYPE_NOT_YET_DEFINED'
+        ip-v-4-address-cur-list:
+          type: array
+          minItems: 1
+          x-key: fixed-ip-v-4-address fixed-ip-v-4-address-prefix-length
+          items:
+            type: object
+            required:
+              - fixed-ip-v-4-address
+              - fixed-ip-v-4-address-prefix-length
+              - fixed-default-gateway-ip-v-4-address
+            properties:
+              fixed-ip-v-4-address:
+                type: string
+                pattern: '^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'
+              fixed-ip-v-4-address-prefix-length:
+                type: integer
+                format: int8
+              fixed-default-gateway-ip-v-4-address:
+                type: string
+                pattern: '^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'
+        ip-address-origin:
+          type: string
+          enum:
+            - 'ip-interface-1-0:IP_ADDRESS_ORIGIN_TYPE_OTHER'
+            - 'ip-interface-1-0:IP_ADDRESS_ORIGIN_TYPE_STATIC'
+            - 'ip-interface-1-0:IP_ADDRESS_ORIGIN_TYPE_DHCP'
+            - 'ip-interface-1-0:IP_ADDRESS_ORIGIN_TYPE_LINK_LAYER'
+            - 'ip-interface-1-0:IP_ADDRESS_ORIGIN_TYPE_RANDOM'
+            - 'ip-interface-1-0:IP_ADDRESS_ORIGIN_TYPE_NOT_YET_DEFINED'
+        neighbor-list:
+          type: array
+          minItems: 0
+          x-key: neighbor-mac-address
+          items:
+            type: object
+            required:
+              - neighbor-mac-address
+              - neighbor-ip-v-4-address-list
+              - neighbor-origin
+            properties:
+              neighbor-mac-address:
+                type: string
+                pattern: '^[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}$'
+              neighbor-ip-v-4-address-list:
+                type: string
+                pattern: '^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'
+              neighbor-origin:
+                type: string
+                enum:
+                  - 'ip-interface-1-0:IP_ADDRESS_ORIGIN_TYPE_OTHER'
+                  - 'ip-interface-1-0:IP_ADDRESS_ORIGIN_TYPE_STATIC'
+                  - 'ip-interface-1-0:IP_ADDRESS_ORIGIN_TYPE_DYNAMIK'
+                  - 'ip-interface-1-0:IP_ADDRESS_ORIGIN_TYPE_NOT_YET_DEFINED'
+        vpn-binding-is-up:
+          type: boolean
+        loop-back-kind-up:
+          type: string
+          enum:
+            - 'ip-interface-1-0:LOOP_BACK_TYPE_NONE'
+            - 'ip-interface-1-0:LOOP_BACK_TYPE_BACK_TO_LOCAL'
+            - 'ip-interface-1-0:LOOP_BACK_TYPE_BACK_TO_REMOTE'
+            - 'ip-interface-1-0:LOOP_BACK_TYPE_NOT_YET_DEFINED'
+        statistics-is-up:
+          type: boolean
+        timestamp:
+          type: string
+          pattern: '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?(Z|[\+\-]\d{2}:\d{2})$'
+        last-10-sec-data-input-rate:
+          type: integer
+          format: int32
+        last-10-sec-data-output-rate:
+          type: integer
+          format: int32
+        last-10-sec-packet-input-rate:
+          type: integer
+          format: int32
+        last-10-sec-packet-output-rate:
+          type: integer
+          format: int32
+        data-volume-input:
+          type: integer
+          format: int32
+        data-volume-output:
+          type: integer
+          format: int32
+        total-packets-input:
+          type: string
+        total-packets-output:
+          type: string
+        forwarded-data-volume-input:
+          type: integer
+          format: int32
+        forwarded-data-volume-output:
+          type: integer
+          format: int32
+        forwarded-packets-input:
+          type: string
+        forwarded-packets-output:
+          type: string
+        unicast-packets-input:
+          type: string
+        unicast-packets-output:
+          type: string
+        multicast-packets-input:
+          type: integer
+          format: int32
+        multicast-packets-output:
+          type: integer
+          format: int32
+        broadcast-packets-input:
+          type: integer
+          format: int32
+        broadcast-packets-output:
+          type: integer
+          format: int32
+        fragmented-packets-input:
+          type: integer
+          format: int32
+        errored-packets-input:
+          type: integer
+          format: int32
+        errored-packets-output:
+          type: integer
+          format: int32
+        dropped-packets-input:
+          type: integer
+          format: int32
+        dropped-packets-output:
+          type: integer
+          format: int32
+
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: operation-key
+    basicAuth:
+      type: http
+      scheme: basic

@@ -1,0 +1,342 @@
+ip-interface-1-0:ip-interface-capability:
+  type: object
+  required:
+    - ip-interface-1-0:ip-interface-capability
+  properties:
+    ip-interface-1-0:ip-interface-capability:
+      type: object
+      required:
+        - maximum-number-of-ip-v-4-addresses
+        - dhcp-client-is-avail
+        - fixed-default-gateway-configuration-is-avail
+        - maximum-transmission-unit-min
+        - maximum-transmission-unit-max
+        - ip-v-6-is-avail
+        - arp-proxy-is-avail
+        - ingress-policing-is-avail
+        - egress-shaping-is-avail
+        - information-rate-min
+        - information-rate-max
+        - burst-size-min
+        - burst-size-max
+        - vpn-binding-is-avail
+        - admin-shut-down-is-avail
+        - supported-loop-back-kind-list
+        - maintenance-timer-range
+        - statistics-is-avail
+      properties:
+        maximum-number-of-ip-v-4-addresses:
+          type: integer
+          format: int16
+        dhcp-client-is-avail:
+          type: boolean
+        fixed-default-gateway-configuration-is-avail:
+          type: boolean
+        maximum-transmission-unit-min:
+          type: integer
+          format: int16
+        maximum-transmission-unit-max:
+          type: integer
+          format: int16
+        ip-v-6-is-avail:
+          type: boolean
+        arp-proxy-is-avail:
+          type: boolean
+        ingress-policing-is-avail:
+          type: boolean
+        egress-shaping-is-avail:
+          type: boolean
+        information-rate-min:
+          type: integer
+          format: int32
+        information-rate-max:
+          type: integer
+          format: int32
+        burst-size-min:
+          type: integer
+          format: int16
+        burst-size-max:
+          type: integer
+          format: int16
+        vpn-binding-is-avail:
+          type: boolean
+        admin-shut-down-is-avail:
+          type: boolean
+        supported-loop-back-kind-list:
+          type: array
+          minItems: 1
+          maxItems: 3
+          items:
+            type: string
+            enum:
+              - 'ip-interface-1-0:LOOP_BACK_TYPE_NONE'
+              - 'ip-interface-1-0:LOOP_BACK_TYPE_BACK_TO_LOCAL'
+              - 'ip-interface-1-0:LOOP_BACK_TYPE_BACK_TO_REMOTE'
+              - 'ip-interface-1-0:LOOP_BACK_TYPE_NOT_YET_DEFINED'
+        maintenance-timer-range:
+          type: string
+          pattern: '^(Range of the maintenance timer not yet defined\.)$|^([0-9]{1,}){1,1}([,]{1,1}[ ]{1,1}[1-9]{1,1}[0-9]{0,}){0,}$|^([0-9]{1,}){1,1}(-){1,1}([1-9]{1,1}[0-9]{0,}){1,1}$'
+        statistics-is-avail:
+          type: boolean
+ip-interface-1-0:ip-interface-configuration:
+  type: object
+  required:
+    - ip-interface-1-0:ip-interface-configuration
+  properties:
+    ip-interface-1-0:ip-interface-configuration:
+      type: object
+      required:
+        - interface-name
+        - interface-is-on
+        - dhcp-client-is-on
+        - fixed-ip-v-4-address-list
+        - maximum-transmission-unit-ip
+        - arp-proxy
+        - egress-shaping-is-on
+        - maximum-information-rate
+        - maximum-burst-size
+        - loop-back-kind-on
+        - maintenance-timer
+        - statistics-is-on
+      properties:
+        interface-name:
+          type: string
+        interface-is-on:
+          type: boolean
+        dhcp-client-is-on:
+          type: boolean
+        fixed-ip-v-4-address-list:
+          type: array
+          minItems: 1
+          x-key: fixed-ip-v-4-address fixed-ip-v-4-address-prefix-length
+          items:
+            type: object
+            required:
+              - fixed-ip-v-4-address
+              - fixed-ip-v-4-address-prefix-length
+              - fixed-default-gateway-ip-v-4-address
+            properties:
+              fixed-ip-v-4-address:
+                type: string
+                pattern: '^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'
+              fixed-ip-v-4-address-prefix-length:
+                type: integer
+                format: int8
+              fixed-default-gateway-ip-v-4-address:
+                type: string
+                pattern: '^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'
+        maximum-transmission-unit-ip:
+          type: integer
+          format: int16
+        arp-proxy:
+          type: string
+          enum:
+            - 'ip-interface-1-0:ARP_PROXY_TYPE_DISABLE'
+            - 'ip-interface-1-0:ARP_PROXY_TYPE_REMOTE_ONLY'
+            - 'ip-interface-1-0:ARP_PROXY_TYPE_ALL'
+            - 'ip-interface-1-0:ARP_PROXY_TYPE_NOT_YET_DEFINED'
+        ingress-policing-profile:
+          type: string
+        egress-shaping-is-on:
+          type: boolean
+        maximum-information-rate:
+          type: integer
+          format: int32
+        maximum-burst-size:
+          type: integer
+          format: int16
+        l-3vpn-profile:
+          type: string
+        qos-profile:
+          type: string
+        loop-back-kind-on:
+          type: string
+          enum:
+            - 'ip-interface-1-0:LOOP_BACK_TYPE_NONE'
+            - 'ip-interface-1-0:LOOP_BACK_TYPE_BACK_TO_LOCAL'
+            - 'ip-interface-1-0:LOOP_BACK_TYPE_BACK_TO_REMOTE'
+            - 'ip-interface-1-0:LOOP_BACK_TYPE_NOT_YET_DEFINED'
+        maintenance-timer:
+          type: integer
+          format: int32
+        statistics-is-on:
+          type: boolean
+ip-interface-1-0:ip-interface-status:
+  type: object
+  required:
+    - ip-interface-1-0:ip-interface-status
+  properties:
+    ip-interface-1-0:ip-interface-status:
+      type: object
+      required:
+        - interface-status
+        - ip-v-4-address-cur-list
+        - ip-address-origin
+        - vpn-binding-is-up
+        - loop-back-kind-up
+        - statistics-is-up
+        - timestamp
+        - last-10-sec-data-input-rate
+        - last-10-sec-data-output-rate
+        - last-10-sec-packet-input-rate
+        - last-10-sec-packet-output-rate
+        - data-volume-input
+        - data-volume-output
+        - total-packets-input
+        - total-packets-output
+        - forwarded-data-volume-input
+        - forwarded-data-volume-output
+        - forwarded-packets-input
+        - forwarded-packets-output
+        - unicast-packets-input
+        - unicast-packets-output
+        - multicast-packets-input
+        - multicast-packets-output
+        - broadcast-packets-input
+        - broadcast-packets-output
+        - fragmented-packets-input
+        - errored-packets-input
+        - errored-packets-output
+        - dropped-packets-input
+        - dropped-packets-output
+      properties:
+        interface-status:
+          type: string
+          enum:
+            - 'ip-interface-1-0:INTERFACE_STATUS_TYPE_UP'
+            - 'ip-interface-1-0:INTERFACE_STATUS_TYPE_DOWN'
+            - 'ip-interface-1-0:INTERFACE_STATUS_TYPE_TESTING'
+            - 'ip-interface-1-0:INTERFACE_STATUS_TYPE_UNKNOWN'
+            - 'ip-interface-1-0:INTERFACE_STATUS_TYPE_DORMANT'
+            - 'ip-interface-1-0:INTERFACE_STATUS_TYPE_NOT_PRESENT'
+            - 'ip-interface-1-0:INTERFACE_STATUS_TYPE_NOT_YET_DEFINED'
+        ip-v-4-address-cur-list:
+          type: array
+          minItems: 1
+          x-key: fixed-ip-v-4-address fixed-ip-v-4-address-prefix-length
+          items:
+            type: object
+            required:
+              - fixed-ip-v-4-address
+              - fixed-ip-v-4-address-prefix-length
+              - fixed-default-gateway-ip-v-4-address
+            properties:
+              fixed-ip-v-4-address:
+                type: string
+                pattern: '^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'
+              fixed-ip-v-4-address-prefix-length:
+                type: integer
+                format: int8
+              fixed-default-gateway-ip-v-4-address:
+                type: string
+                pattern: '^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'
+        ip-address-origin:
+          type: string
+          enum:
+            - 'ip-interface-1-0:IP_ADDRESS_ORIGIN_TYPE_OTHER'
+            - 'ip-interface-1-0:IP_ADDRESS_ORIGIN_TYPE_STATIC'
+            - 'ip-interface-1-0:IP_ADDRESS_ORIGIN_TYPE_DHCP'
+            - 'ip-interface-1-0:IP_ADDRESS_ORIGIN_TYPE_LINK_LAYER'
+            - 'ip-interface-1-0:IP_ADDRESS_ORIGIN_TYPE_RANDOM'
+            - 'ip-interface-1-0:IP_ADDRESS_ORIGIN_TYPE_NOT_YET_DEFINED'
+        neighbor-list:
+          type: array
+          minItems: 0
+          x-key: neighbor-mac-address
+          items:
+            type: object
+            required:
+              - neighbor-mac-address
+              - neighbor-ip-v-4-address-list
+              - neighbor-origin
+            properties:
+              neighbor-mac-address:
+                type: string
+                pattern: '^[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}:[0-9a-fA-F]{2}$'
+              neighbor-ip-v-4-address-list:
+                type: string
+                pattern: '^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$'
+              neighbor-origin:
+                type: string
+                enum:
+                  - 'ip-interface-1-0:IP_ADDRESS_ORIGIN_TYPE_OTHER'
+                  - 'ip-interface-1-0:IP_ADDRESS_ORIGIN_TYPE_STATIC'
+                  - 'ip-interface-1-0:IP_ADDRESS_ORIGIN_TYPE_DYNAMIK'
+                  - 'ip-interface-1-0:IP_ADDRESS_ORIGIN_TYPE_NOT_YET_DEFINED'
+        vpn-binding-is-up:
+          type: boolean
+        loop-back-kind-up:
+          type: string
+          enum:
+            - 'ip-interface-1-0:LOOP_BACK_TYPE_NONE'
+            - 'ip-interface-1-0:LOOP_BACK_TYPE_BACK_TO_LOCAL'
+            - 'ip-interface-1-0:LOOP_BACK_TYPE_BACK_TO_REMOTE'
+            - 'ip-interface-1-0:LOOP_BACK_TYPE_NOT_YET_DEFINED'
+        statistics-is-up:
+          type: boolean
+        timestamp:
+          type: string
+          pattern: '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?(Z|[\+\-]\d{2}:\d{2})$'
+        last-10-sec-data-input-rate:
+          type: integer
+          format: int32
+        last-10-sec-data-output-rate:
+          type: integer
+          format: int32
+        last-10-sec-packet-input-rate:
+          type: integer
+          format: int32
+        last-10-sec-packet-output-rate:
+          type: integer
+          format: int32
+        data-volume-input:
+          type: integer
+          format: int32
+        data-volume-output:
+          type: integer
+          format: int32
+        total-packets-input:
+          type: string
+        total-packets-output:
+          type: string
+        forwarded-data-volume-input:
+          type: integer
+          format: int32
+        forwarded-data-volume-output:
+          type: integer
+          format: int32
+        forwarded-packets-input:
+          type: string
+        forwarded-packets-output:
+          type: string
+        unicast-packets-input:
+          type: string
+        unicast-packets-output:
+          type: string
+        multicast-packets-input:
+          type: integer
+          format: int32
+        multicast-packets-output:
+          type: integer
+          format: int32
+        broadcast-packets-input:
+          type: integer
+          format: int32
+        broadcast-packets-output:
+          type: integer
+          format: int32
+        fragmented-packets-input:
+          type: integer
+          format: int32
+        errored-packets-input:
+          type: integer
+          format: int32
+        errored-packets-output:
+          type: integer
+          format: int32
+        dropped-packets-input:
+          type: integer
+          format: int32
+        dropped-packets-output:
+          type: integer
+          format: int32

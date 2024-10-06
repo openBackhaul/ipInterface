@@ -17,22 +17,22 @@
 - When statement in Augmentation statement demands for LayerProtocol::layerProtocolName==LAYER_PROTOCOL_NAME_TYPE_IP_LAYER
 
 ### YANG File
-- [IpInterface_1.0.0-tsi.240105.1005+yang.1](./IpInterface_1.0.0-tsi.240105.1005+yang.1.zip)
+- [IpInterface_1.0.0-tsi.240105.1005+yang.1](./IpInterface_1.0.0-tsi.240105.1005+yang/ip-interface-1-0.yang)
 
-### JSON Schema
-- to be provided
+### Schema
+- [IpInterface_1.0.0-tsi.240105.1005+schema](./IpInterface_1.0.0-tsi.240105.1005+schema/)
 
 ### Interface Simulator
-- to be provided
+- [IpInterface_1.0.0-tsi.240105.1005+simulator](./IpInterface_1.0.0-tsi.240105.1005+simu/)
 
 ### Interface Validator
-- [IpInterface_1.0.0-tsi.240105.1005+validator.1](./IpInterface_1.0.0-tsi.240105.1005+validator.1.zip)
+- [IpInterface_1.0.0-tsi.240105.1005+validator](./IpInterface_1.0.0-tsi.240105.1005+vali/)
 
 ### Publication
-- Candidate for ONF TR-532 v2.0 
+- Published as a part of ONF TR-532 v2.0  
 
 ### Model Classification
-- Live Network
+- Operational in Live Network
 
 ### Open Issue List
 - [ipInterface/issues](../../issues)
