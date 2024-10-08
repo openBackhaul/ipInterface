@@ -48,8 +48,7 @@
 				"collectionName": "IpInterface_simulator",
 				"serverToBeApplied": "controller in IpInterface_1.0.0-tsi.240105.1005+simulator.completeness",
 				"mountName": "305250001",
-				"kindOfReference": "static",
-				"suffixUrlEncodingIsRequired": true
+				"kindOfReference": "static"
 			}
 		]
 	}
